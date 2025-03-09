@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react';
-import { Menu, Luggage } from 'lucide-react';
+import { Menu, Bus } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface HeaderProps {
@@ -21,23 +21,25 @@ const Header = ({ toggleSideMenu }: HeaderProps) => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'py-2 bg-white/90 shadow-md backdrop-blur-sm' : 'py-4 bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
+        scrolled ? 'py-2 bg-white shadow-sm' : 'py-2 bg-white'
+      } md:ml-64`}
     >
       <div className="container max-w-screen-xl mx-auto px-4 flex items-center justify-between">
         <button 
           onClick={toggleSideMenu}
-          className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition-colors"
+          className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition-colors md:hidden"
           aria-label="Open menu"
         >
           <Menu className="text-brand-dark" size={24} />
         </button>
         
-        <Link to="/" className="flex items-center gap-2 text-brand-dark">
-          <h1 className="text-xl font-semibold">Mala Pronta</h1>
-          <Luggage className="animate-float" size={24} />
+        <Link to="/" className="flex items-center gap-2 text-brand-dark mx-auto md:mx-0">
+          <h1 className="text-xl font-semibold">Viagem Pronta</h1>
+          <Bus className="text-brand-green" size={24} />
         </Link>
+        
+        <div className="w-10 md:hidden"></div> {/* Spacer for mobile to center title */}
       </div>
     </header>
   );
