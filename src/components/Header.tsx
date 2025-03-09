@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react';
-import { Menu, Suitcase } from 'lucide-react';
+import { Menu, Luggage } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface HeaderProps {
@@ -36,7 +36,7 @@ const Header = ({ toggleSideMenu }: HeaderProps) => {
         
         <Link to="/" className="flex items-center gap-2 text-brand-dark">
           <h1 className="text-xl font-semibold">Mala Pronta</h1>
-          <Suitcase className="animate-float" size={24} />
+          <Luggage className="animate-float" size={24} />
         </Link>
       </div>
     </header>
